@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}}
+{% block content %}
+
+<div class="container">
+        <div class="row justify-content-md-center pt-5">
+            <div class="col-md-8">
+            {% for post in posts %}
+            <a class="text-dark"href='{{post.get_absolute_url}}'><h1>{{post.title}}</h1></a>
+                <div class="col-md-12"><p>{{post.content|truncatechars:200}}...</p></div>
+                    <span>@{{post.author }}<br><br></span>
+
+                    {% endfor %}
+            </div>
+
+        </div>
+      </div>
+{% endblock content %}
